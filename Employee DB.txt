@@ -1,0 +1,157 @@
+Program:
+class Employee:
+    def __init__(self,name='',id=0, des='', sal=0, inc=0): 
+        self.name = name
+        self.id = id 
+        self.des = des 
+        self.sal = sal 
+        self.inc = inc 
+    def display(self):
+        t.add_row([self.name,self.id,self.des,self.sal,self.inc])
+    def dis(self):
+        di.add_row([self.name,self.id,self.des,self.sal,self.inc])
+    def acc(self):
+        aa.add_row([self.name,self.id,self.des,self.sal,self.inc])
+    def accd(self):
+        aaa.add_row([self.name,self.id,self.des,self.sal,self.inc])
+    def search(self): 
+        for i in range(a): 
+            if(l[i].id == d):
+                print(" Employee Found")
+                l[i].dis()
+    def salacc(self): 
+        for i in range(a): 
+            if(l[i].id == d):
+                print(" Employee Found")
+                l[i].sal=float(input("enter the salary:"))
+                l[i].inc=l[i].sal*0.05
+                l[i].acc()
+    def desacc(self): 
+        for i in range(a): 
+            if(l[i].id == d):
+                print(" Employee Found")
+                l[i].des=input("enter the designation:")
+                l[i].accd()
+l ={}
+obj=Employee()
+from prettytable import PrettyTable
+t = PrettyTable(["Name","ID","Designation","Salary","Income tax"])
+di = PrettyTable(["Name","ID","Designation","Salary","Income tax"])
+aa = PrettyTable(["Name","ID","Designation","Salary","Income tax"])
+aaa = PrettyTable(["Name","ID","Designation","Salary","Income tax"])
+a=int(input("enter no. of.employees:"))
+for i in range(a):
+    print("Employee",i+1)
+    name=input("enter name:")
+    id =int(input("enter id"))
+    des=input("enter designation:")
+    sal=int(input("enter salary:"))
+    inc=sal*0.05
+    l[i]=Employee(name,id,des,sal,inc)
+    print("\n")
+s = input("do you want to display the details -> (yes) or (no): ").lower()
+if(s == "yes"):
+    print("-----List of employees-----")
+    for i in range(a):
+        l[i].display()
+    print(t)      
+else:
+    print("ok")
+print("\n")    
+p = input("do you want to search the details -> (yes) or (no): ").lower()     
+if (p=="yes"):
+    d=int(input("enter id:"))
+    obj.search()
+    print(di)
+else:
+    print("ok")
+accs=input("do you want to access the salary -> (yes) or (no): ").lower()     
+if (accs=="yes"):
+    d=int(input("enter id:"))
+    obj.salacc()
+    print(aa)
+else:
+    print("ok")
+acc=input("do you want to update the designation -> (yes) or (no):").lower()
+if(acc=="yes"):
+    d=int(input("enter id:"))
+    obj.desacc()
+    print(aaa)
+else:
+    print("ok")
+
+
+Output:
+enter no. of.employees:4
+Employee 1
+enter name:emp1
+enter id1
+enter designation:ceo
+enter salary:60000
+
+
+Employee 2
+enter name:emp2
+enter id2
+enter designation:manager
+enter salary:50000
+
+
+Employee 3
+enter name:emp3
+enter id3
+enter designation:team lead
+enter salary:40000
+
+
+Employee 4
+enter name:emp4
+enter id4
+enter designation:developer
+enter salary:35000
+
+
+
+do you want to display the details -> (yes) or (no): yes
+-----List of employees-----
++------+----+-------------+--------+------------+
+| Name | ID | Designation | Salary | Income tax |
++------+----+-------------+--------+------------+
+| emp1 | 1  |     ceo     | 60000  |   3000.0   |
+| emp2 | 2  |   manager   | 50000  |   2500.0   |
+| emp3 | 3  |  team lead  | 40000  |   2000.0   |
+| emp4 | 4  |  developer  | 35000  |   1750.0   |
++------+----+-------------+--------+------------+
+
+
+do you want to search the details -> (yes) or (no): yes
+enter id:3
+ Employee Found
++------+----+-------------+--------+------------+
+| Name | ID | Designation | Salary | Income tax |
++------+----+-------------+--------+------------+
+| emp3 | 3  |  team lead  | 40000  |   2000.0   |
++------+----+-------------+--------+------------+
+
+
+
+do you want to access the salary -> (yes) or (no): yes
+enter id:1
+ Employee Found
+enter the salary:10
++------+----+-------------+--------+------------+
+| Name | ID | Designation | Salary | Income tax |
++------+----+-------------+--------+------------+
+| emp1 | 1  |      ceo    |   10   |    0.5     |
++------+----+-------------+--------+------------+
+
+do you want to update the designation -> (yes) or (no):yes
+enter id:2
+ Employee Found
+enter the designation:arch
++------+----+-------------+--------+------------+
+| Name | ID | Designation | Salary | Income tax |
++------+----+-------------+--------+------------+
+|emp2  | 2  |    arch     | 50000  |    2500.0  |
++------+----+-------------+--------+------------+
+
